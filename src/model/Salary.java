@@ -1,8 +1,8 @@
-package Model;
+package model;
 
-public class salary {
+public class Salary {
     private Integer Salary;
-    public salary(Integer code) {
+    public Salary(Integer code) {
         this.Salary = code;
         System.out.println(Salary);
     }

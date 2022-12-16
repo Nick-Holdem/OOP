@@ -1,19 +1,17 @@
-package Model;
+package model;
 
-import Model.work.director;
-import Model.work.manager;
-import Model.work.programmer;
-import Model.work.manager;
-import Model.work.programmer;
+import model.work.Director;
+import model.work.Manager;
+import model.work.Programmer;
 
 import java.io.*;
 import java.nio.file.Paths;
 import java.util.*;
 import java.util.ArrayList;
 import java.util.Collections;
-public class service {
+public class Service {
     private String Code;
-    public service(String code) throws IOException {
+    public Service(String code) throws IOException {
         this.Code = code;
         final String filePath = code;
 
@@ -45,13 +43,13 @@ public class service {
 
             }
             if (Code==1) {
-                director list = new director(key, name, Code, Atriute, Salary);
+                Director list = new Director(key, name, Code, Atriute, Salary);
                 System.out.println("Diresctor\n");
             } else if (Code==2) {
-                manager list = new manager(key, name, Code, Atriute, Salary);
+                Manager list = new Manager(key, name, Code, Atriute, Salary);
                 System.out.println("Manager\n");
             }else if (Code==3){
-                programmer list = new programmer(key, name, Code, Atriute, Salary);
+                Programmer list = new Programmer(key, name, Code, Atriute, Salary);
                 System.out.println("Programmer\n");
             }
 

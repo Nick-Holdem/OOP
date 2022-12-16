@@ -1,10 +1,10 @@
-import Model.service;
+import model.Service;
 
 import java.io.IOException;
 
-public class main {
+public class Main {
     public static void main(String[] args) throws IOException {
         //enter the data file for execute the program
-        service file = new service("employee-input.txt");
+        Service file = new Service("employee-input.txt");
     }
 }

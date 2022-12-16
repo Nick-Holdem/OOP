@@ -1,13 +1,13 @@
-package Model.work;
+package model.work;
 
-public class manager {
+public class Manager {
     private Integer ID;
     private String FirstName;
     private Integer Code;
     private String Atribute;
     private Double Salary;
 
-    public manager(Integer id, String firstName, Integer code, String atribute, Double salary) {
+    public Manager(Integer id, String firstName, Integer code, String atribute, Double salary) {
         this.ID = id;
         this.FirstName = firstName;
         this.Code = code;
