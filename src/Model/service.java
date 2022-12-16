@@ -1,9 +1,10 @@
 package Model;
 
-import Model.Salary;
-import Model.work.Director;
-import Model.work.Manager;
-import Model.work.Programmer;
+import Model.work.director;
+import Model.work.manager;
+import Model.work.programmer;
+import Model.work.manager;
+import Model.work.programmer;
 
 import java.io.*;
 import java.nio.file.Paths;
@@ -44,13 +45,13 @@ public class service {
 
             }
             if (Code==1) {
-                Director list = new Director(key, name, Code, Atriute, Salary);
+                director list = new director(key, name, Code, Atriute, Salary);
                 System.out.println("Diresctor\n");
             } else if (Code==2) {
-                Manager list = new Manager(key, name, Code, Atriute, Salary);
+                manager list = new manager(key, name, Code, Atriute, Salary);
                 System.out.println("Manager\n");
             }else if (Code==3){
-                Programmer list = new Programmer(key, name, Code, Atriute, Salary);
+                programmer list = new programmer(key, name, Code, Atriute, Salary);
                 System.out.println("Programmer\n");
             }
 
