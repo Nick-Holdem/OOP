@@ -1,3 +1,5 @@
+package Model;
+
 import Model.Salary;
 import Model.work.Director;
 import Model.work.Manager;
@@ -8,13 +10,11 @@ import java.nio.file.Paths;
 import java.util.*;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map.Entry;
-
-public class Main {
-    final static String filePath = "employee-input.txt";
-        public static void main(String[] args) throws IOException {
-
+public class service {
+    private String Code;
+    public service(String code) throws IOException {
+        this.Code = code;
+        final String filePath = code;
 
         String line;
         String linee;
@@ -25,8 +25,8 @@ public class Main {
         Double Salary = null;
         List<String> y = Arrays.asList(name);
         //-----------------------------------------
-        Scanner myObj = new Scanner(System.in);
-        String nameObj = myObj.nextLine();
+//        Scanner myObj = new Scanner(System.in);
+//        String nameObj = myObj.nextLine();
 
         BufferedReader reader = new BufferedReader(new FileReader(Paths.get(filePath).toFile()));
         System.out.println("-----------Object-----------");
@@ -35,11 +35,11 @@ public class Main {
             String[] parts = line.split("[ ]");
             if (parts.length >= 0)
             {
-                 key = Integer.valueOf(parts[0]);
-                 name = parts[1];
-                 Code = Integer.valueOf(parts[2]);
-                 Atriute = parts[3];
-                 Salary = Double.valueOf(parts[4]);
+                key = Integer.valueOf(parts[0]);
+                name = parts[1];
+                Code = Integer.valueOf(parts[2]);
+                Atriute = parts[3];
+                Salary = Double.valueOf(parts[4]);
 
 
             }
@@ -55,7 +55,7 @@ public class Main {
             }
 
         }
- //---------------------------------------------------------------------------------------------------------------------
+        //---------------------------------------------------------------------------------------------------------------------
         BufferedReader readeri = new BufferedReader(new FileReader(Paths.get(filePath).toFile()));
         System.out.println("-----------Initial List-----------");
         while ((linee = readeri.readLine()) != null)
@@ -71,15 +71,36 @@ public class Main {
                 System.out.println( key + " | "+ name+" | "+Code+" | "+Atriute+" | "+Salary);
 
             }
+        }//-----------------------------------------------------------------------
+        BufferedReader bufReader = new BufferedReader(new FileReader("employee-input.txt"));
+        ArrayList<String> listOfLines = new ArrayList<>();
+        Double ListSalary;
+        String qline = bufReader.readLine();
+        while (qline != null) {
+            listOfLines.add(qline);
+            qline = bufReader.readLine();
         }
-//---------------------------------------------------------------------------------------------------------------------
-        System.out.println("-------------------TEST-----------------------");
-        Model.Salary num = new Salary(55);
-        
-        System.out.println("---------------------------------------------");
+        BufferedWriter bf = null;
+        System.out.println("--------------------salary-----------------------------------");
+        try {
+            // create new BufferedWriter for the output file
+            bf = new BufferedWriter(new FileWriter("employee-final.txt"));
 
-//----------------------------------Sort-------------------------------------------------------------------
+            for (int k = 0; k < listOfLines.size(); k++){
+                ListSalary = Double.valueOf(listOfLines.get(k).substring(listOfLines.get(k).lastIndexOf(" ") +1, listOfLines.get(k).length()));
+                System.out.println(ListSalary);
+            }
 
+            bf.flush();
+
+
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+            bf.close();
+        }
+//----------------------------------Sort- fastname-----------------------------------------------------------------
+        System.out.println("----------ort FirsName----------------");
         FileReader fileReader = new FileReader(filePath);
         BufferedReader bufferedReader = new BufferedReader(fileReader);
         String inputLine;
@@ -93,5 +114,11 @@ public class Main {
         System.out.println(lineList);;
         //------------------------------
 
+    }
+    public String getCode() {
+        return Code;
+    }
+    public void setCode(String code) {
+        Code = code;
     }
 }
