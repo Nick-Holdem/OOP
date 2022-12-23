@@ -1,4 +1,4 @@
-2425 Rusu 1 AmSoft 1562.1
-5225 Cuciuc 2 tre 300.11
-3655 Pontea 3 Java 633.23
-6565 Ursu 3 Java 542.02
+2425|Rusu Dorin|1|AmSoft|1562.1
+5225|Cuciuc Egor|2|2|300.11
+3655|Pontea Maxim|3|Java|633.23
+6565|Ursu Anna|3|Java|542.02
